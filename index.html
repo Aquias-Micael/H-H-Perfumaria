@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loja de Cosméticos</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Seu CSS personalizado -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Cabeçalho -->
+    <header class="bg-white py-3">
+        <div class="container">
+            <div class="d-flex justify-content-between align-items-center">
+                <!-- Logo -->
+                <div class="logo">
+                    <img src="./imagem/logo22_p.png" alt="Logo" class="img-fluid" style="max-width: 130px;">
+                </div>
+                <!-- Menu de navegação -->
+                <nav>
+                    <ul class="list-unstyled d-flex mb-0">
+                        <li class="mx-3"><a href="#" class="text-decoration-none text-purple fw-bold">Início</a></li>
+                        <li class="mx-3"><a href="#" class="text-decoration-none text-purple fw-bold">Produtos</a></li>
+                        <li class="mx-3"><a href="#" class="text-decoration-none text-purple fw-bold">Sobre Nós</a></li>
+                        <li class="mx-3"><a href="#" class="text-decoration-none text-purple fw-bold">Contato</a></li>
+                    </ul>
+                </nav>
+                <!-- Ícone do Carrinho -->
+                <div class="carrinho-icon position-relative" onclick="toggleCarrinho()">
+                    <img src="https://cdn-icons-png.flaticon.com/512/263/263142.png" alt="Carrinho" class="img-fluid" style="width: 40px;">
+                    <span class="carrinho-contador position-absolute top-0 start-100 translate-middle badge bg-primary">0</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Banner Principal -->
+    <section class="banner text-center text-white py-5" style="background-image: url('https://via.placeholder.com/1200x400'); background-size: cover;">
+        <div class="container">
+            <h1 class="display-4">Bem-vindo à H & H Perfumaria</h1>
+            <p class="lead">Descubra os melhores cosméticos para cuidar da sua pele e cabelo.</p>
+        </div>
+    </section>
+
+    <!-- Seção de Produtos -->
+    <section class="produtos py-5">
+        <div class="container">
+            <h2 class="text-center mb-5">Promoções e lançamentos</h2>
+            <!-- Carrossel com os produtos -->
+            <div class="carrossel-container position-relative">
+                <!-- Seta esquerda -->
+                <button class="carrossel-seta carrossel-seta-esquerda position-absolute top-50 start-0 translate-middle-y bg-dark text-white border-0 rounded-circle p-3" onclick="moverCarrossel(-1)">‹</button>
+                <!-- Produtos -->
+                <div class="carrossel-inner d-flex">
+                    <!-- Primeiro slide -->
+                    <div class="carrossel-slide d-flex">
+                        <div class="produto mx-2">
+                            <img src="Combo Active Pro Olhos E Facial.jpg" class="card-img-top" alt="Combo Active Pro Olhos E Facial">
+                            <div class="card-body">
+                                <h3 class="card-title">Combo Active Pro Olhos E Facial</h3>
+                                <p class="card-text" style="font-size: 0.8rem;"> de R$ 179,98</p>
+                                <p class="card-text"> por R$ 142,80</p>
+                                <button class="btn btn-primary w-100" onclick="adicionarAoCarrinho('Creme Hidratante', 142.80)">Adicionar ao Carrinho</button>
+                            </div>
+                        </div>
+                        <div class="produto mx-2">
+                            <img src="Jardin De Grasse Rose Faixa 2.jpg" class="card-img-top" alt="Jardin De Grasse Rose Faixa 2">
+                            <div class="card-body">
+                                <h3 class="card-title">Jardin De Grasse Rose Faixa 2</h3>
+                                <p class="card-text" style="font-size: 0.8rem;"> de R$ 288,00</p>
+                                <p class="card-text"> por R$ 249,00</p>
+                                <button class="btn btn-primary w-100" onclick="adicionarAoCarrinho('Máscara Capilar', 249.00)">Adicionar ao Carrinho</button>
+                            </div>
+                        </div>
+                        <div class="produto mx-2">
+                            <img src="Imagem do WhatsApp de 2025-03-20 à(s) 23.11.51_876583bb.jpg" class="card-img-top" alt="Loção hidratante desodorante corporal">
+                            <div class="card-body">
+                                <h3 class="card-title">Loção hidratante desodorante corporal</h3>
+                                <p class="card-text" style="font-size: 0.8rem;"> de R$ 103,97</p>
+                                <p class="card-text"> por R$ 89,90</p>
+                                <button class="btn btn-primary w-100" onclick="adicionarAoCarrinho('Loção hidratante', 89.90)">Adicionar ao Carrinho</button>
+                            </div>
+                        </div>
+                        
+                    </div>
+                    <!-- Segundo slide -->
+                    <div class="carrossel-slide d-flex">
+                        <div class="produto mx-2">
+                            <img src="Paradis Rouge.jpg" class="card-img-top" alt="Paradis Rouge">
+                            <div class="card-body">
+                                <h3 class="card-title" s>Paradis Rouge</h3>
+                                <p class="card-text" style="font-size: 0.8rem;"> de R$ 208,00</p>
+                                <p class="card-text"> por R$ 184,00</p>
+                                <button class="btn btn-primary w-100" onclick="adicionarAoCarrinho('Perfume', 184.00)">Adicionar ao Carrinho</button>
+                            </div>
+                        </div>
+                        <div class="produto mx-2">
+                            <img src="https://via.placeholder.com/150" class="card-img-top" alt="Perfume">
+                            <div class="card-body">
+                                <h3 class="card-title">Perfume</h3>
+                                <p class="card-text">R$ 99,90</p>
+                                <button class="btn btn-primary w-100" onclick="adicionarAoCarrinho('Perfume', 99.90)">Adicionar ao Carrinho</button>
+                            </div>
+                        </div>
+                        <div class="produto mx-2">
+                            <img src="https://via.placeholder.com/150" class="card-img-top" alt="Sabonete Líquido">
+                            <div class="card-body">
+                                <h3 class="card-title">Sabonete Líquido</h3>
+                                <p class="card-text">R$ 29,90</p>
+                                <button class="btn btn-primary w-100" onclick="adicionarAoCarrinho('Sabonete Líquido', 29.90)">Adicionar ao Carrinho</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Seta direita -->
+                <button class="carrossel-seta carrossel-seta-direita position-absolute top-50 end-0 translate-middle-y bg-dark text-white border-0 rounded-circle p-3" onclick="moverCarrossel(1)">›</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção de Produtos (outros produtos abaixo) -->
+    <section class="produtos py-5">
+        <div class="container">
+            <div class="row">
+                <h2 class="text-center mb-5">Nossos produtos</h2>
+                <!-- Produto 1 -->
+                <div class="col-12 col-md-6 col-lg-4 mb-4">
+                    <div class="produto">
+                        <img src="/imagem/imagem-lançamentos/Combo Active Pro Olhos E Facial.jpg" class="card-img-top" alt="Creme Hidratante">
+                        <div class="card-body">
+                            <h3 class="card-title">Combo Active Pro Olhos E Facial</h3>
+                            <p class="card-text">R$ 49,90</p>
+                            <button class="btn btn-primary w-100" onclick="adicionarAoCarrinho('Creme Hidratante', 49.90)">Adicionar ao Carrinho</button>
+                        </div>
+                    </div>
+                </div>
+                <!-- Produto 2 -->
+                <div class="col-12 col-md-6 col-lg-4 mb-4">
+                    <div class="produto">
+                        <img src="https://via.placeholder.com/150" class="card-img-top" alt="Shampoo Revitalizante">
+                        <div class="card-body">
+                            <h3 class="card-title">Shampoo Revitalizante</h3>
+                            <p class="card-text">R$ 39,90</p>
+                            <button class="btn btn-primary w-100" onclick="adicionarAoCarrinho('Shampoo Revitalizante', 39.90)">Adicionar ao Carrinho</button>
+                        </div>
+                    </div>
+                </div>
+                <!-- Produto 3 -->
+                <div class="col-12 col-md-6 col-lg-4 mb-4">
+                    <div class="produto">
+                        <img src="https://via.placeholder.com/150" class="card-img-top" alt="Máscara Capilar">
+                        <div class="card-body">
+                            <h3 class="card-title">Máscara Capilar</h3>
+                            <p class="card-text">R$ 59,90</p>
+                            <button class="btn btn-primary w-100" onclick="adicionarAoCarrinho('Máscara Capilar', 59.90)">Adicionar ao Carrinho</button>
+                        </div>
+                    </div>
+                </div>
+                <!-- Produto 1 -->
+                <div class="col-12 col-md-6 col-lg-4 mb-4">
+                    <div class="produto">
+                        <img src="/imagem/imagem-lançamentos/Combo Active Pro Olhos E Facial.jpg" class="card-img-top" alt="Creme Hidratante">
+                        <div class="card-body">
+                            <h3 class="card-title">Combo Active Pro Olhos E Facial</h3>
+                            <p class="card-text">R$ 49,90</p>
+                            <button class="btn btn-primary w-100" onclick="adicionarAoCarrinho('Creme Hidratante', 49.90)">Adicionar ao Carrinho</button>
+                        </div>
+                    </div>
+                </div>
+                <!-- Produto 2 -->
+                <div class="col-12 col-md-6 col-lg-4 mb-4">
+                    <div class="produto">
+                        <img src="https://via.placeholder.com/150" class="card-img-top" alt="Shampoo Revitalizante">
+                        <div class="card-body">
+                            <h3 class="card-title">Shampoo Revitalizante</h3>
+                            <p class="card-text">R$ 39,90</p>
+                            <button class="btn btn-primary w-100" onclick="adicionarAoCarrinho('Shampoo Revitalizante', 39.90)">Adicionar ao Carrinho</button>
+                        </div>
+                    </div>
+                </div>
+                <!-- Produto 3 -->
+                <div class="col-12 col-md-6 col-lg-4 mb-4">
+                    <div class="produto">
+                        <img src="https://via.placeholder.com/150" class="card-img-top" alt="Máscara Capilar">
+                        <div class="card-body">
+                            <h3 class="card-title">Máscara Capilar</h3>
+                            <p class="card-text">R$ 59,90</p>
+                            <button class="btn btn-primary w-100" onclick="adicionarAoCarrinho('Máscara Capilar', 59.90)">Adicionar ao Carrinho</button>
+                        </div>
+                    </div>
+                </div>
+                <!-- Repita para os outros produtos -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Rodapé -->
+    <footer class="bg-dark text-white py-4">
+        <div class="container text-center">
+            <p class="mb-0">&copy; 2025 H & H Perfumaria. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <!-- Pop-up do Carrinho -->
+    <div class="carrinho-popup position-fixed top-50 start-50 translate-middle bg-white p-4 rounded shadow" id="carrinhoPopup" style="display: none;">
+        <h2 class="mb-4">Carrinho de Compras</h2>
+        <ul id="carrinhoLista" class="list-unstyled"></ul>
+        <p class="fw-bold">Total: R$ <span id="carrinhoTotal">0.00</span></p>
+        <button class="btn btn-primary me-2" onclick="finalizarCompra()">Finalizar Compra</button>
+        <button class="btn btn-secondary" onclick="fecharCarrinho()">Fechar</button>
+    </div>
+
+    <!-- Botão do WhatsApp -->
+    <div class="whatsapp-popup position-fixed bottom-0 end-0 m-3">
+        <a href="https://wa.me/558188374875" target="_blank">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" class="img-fluid" style="width: 60px;">
+        </a>
+    </div>
+
+    <!-- Notificação -->
+    <div id="notificacao" class="notificacao position-fixed bottom-0 end-0 m-3 bg-success text-white p-3 rounded" style="display: none;">
+        <p class="mb-0">Já adicionamos na sua sacola!</p>
+        <a href="sacola.html" class="text-white fw-bold" onclick="irParaSacola()">Ir para o carrinho</a>
+    </div>
+
+    <!-- Bootstrap JS (opcional) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Seus scripts -->
+    <script src="script.js"></script>
+    <script src="carrossel.js"></script>
+</body>
+</html>
